@@ -1,0 +1,12 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="HouseReconstructed">
+  <!-- Base link (dummy, invisible, static) -->
+  <link name="house_base">
+    <inertial>
+      <mass value="0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+</robot>

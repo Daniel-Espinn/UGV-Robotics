@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="HouseReconstructed">
+  <!-- Base link (dummy, invisible, static) -->
+  <link name="house_base">
+    <inertial>
+      <mass value="0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+
+  <!-- Room 1: Walls (2m x 2m, centered at (0, 0)) -->
+  <link name="room1_north_wall">
+    <visual>
+      <geometry>
+        <box size="2.0 0.05 1.0"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="2.0 0.05 1.0"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="room1_north_wall_joint" type="fixed">
+    <parent link="house_base"/>
+    <child link="room1_north_wall"/>
+    <origin xyz="0 1 0.5" rpy="0 0 0"/>
+  </joint>
+  <link name="room1_south_wall">
+    <visual>
+      <geometry>
+        <box size="2.0 0.05 1.0"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="2.0 0.05 1.0"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="room1_south_wall_joint" type="fixed">
+    <parent link="house_base"/>
+    <child link="room1_south_wall"/>
+    <origin xyz="0 -1 0.5" rpy="0 0 0"/>
+  </joint>
+  <link name="room1_west_wall_left">
+    <visual>
+      <geometry>
+        <box size="0.7 0.05 1.0"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.7 0.05 1.0"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="room1_west_wall_left_joint" type="fixed">
+    <parent link="house_base"/>
+    <child link="room1_west_wall_left"/>
+    <origin xyz="-0.65 -0.3 0.5" rpy="0 0 1.57"/>
+  </joint>
+  <link name="room1_west_wall_right">
+    <visual>
+      <geometry>
+        <box size="0.7 0.05 1.0"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.7 0.05 1.0"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="room1_west_wall_right_joint" type="fixed">
+    <parent link="house_base"/>
+    <child link="room1_west_wall_right"/>
+    <origin xyz="-0.65 0.3 0.5" rpy="0 0 1.57"/>
+  </joint>
+  <link name="room1_east_wall_left">
+    <visual>
+      <geometry>
+        <box size="0.7 0.05 1.0"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.7 0.05 1.0"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="room1_east_wall_left_joint" type="fixed">
+    <parent link="house_base"/>
+    <child link="room1_east_wall_left"/>
+    <origin xyz="0.65 -0.3 0.5" rpy="0 0 1.57"/>
+  </joint>
+  <link name="room1_east_wall_right">
+    <visual>
+      <geometry>
+        <box size="0.7 0.05 1.0"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.7 0.05 1.0"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="room1_east_wall_right_joint" type="fixed">
+    <parent link="house_base"/>
+    <child link="room1_east_wall_right"/>
+    <origin xyz="0.65 0.3 0.5" rpy="0 0 1.57"/>
+  </joint>
+
+  <!-- Room 2: Walls (2m x 2m, centered at (0, 3)) -->
+  <link name="room2_north_wall">
+    <visual>
+      <geometry>
+        <box size="2.0 0.05 1.0"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="2.0 0.05 1.0"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="room2_north_wall_joint" type="fixed">
+    <parent link="house_base"/>
+    <child link="room2_north_wall"/>
+    <origin xyz="0 4 0.5" rpy="0 0 0"/>
+  </joint>
+  <link name="room2_south_wall_left">
+    <visual>
+      <geometry>
+        <box size="0.7 0.05 1.0"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.7 0.05 1.0"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="room2_south_wall_left_joint" type="fixed">
+    <parent link="house_base"/>
+    <child link="room2_south_wall_left"/>
+    <origin xyz="-0.65 2.3 0.5" rpy="0 0 0"/>
+  </joint>
+  <link name="room2_south_wall_right">
+    <visual>
+      <geometry>
+        <box size="0.7 0.05 1.0"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.7 0.05 1.0"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="room2_south_wall_right_joint" type="fixed">
+    <parent link="house_base"/>
+    <child link="room2_south_wall_right"/>
+    <origin xyz="0.65 2.3 0.5" rpy="0 0 0"/>
+  </joint>
+  <link name="room2_west_wall">
+    <visual>
+      <geometry>
+        <box size="2.0 0.05 1.0"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="2.0 0.05 1.0"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="room2_west_wall_joint" type="fixed">
+    <parent link="house_base"/>
+    <child link="room2_west_wall"/>
+    <origin xyz="-1 3 0.5" rpy="0 0 1.57"/>
+  </joint>
+  <link name="room2_east_wall">
+    <visual>
+      <geometry>
+        <box size="2.0 0.05 1.0"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="2.0 0.05 1.0"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="room2_east_wall_joint" type="fixed">
+    <parent link="house_base"/>
+    <child link="room2_east_wall"/>
+    <origin xyz="1 3 0.5" rpy="0 0 1.57"/>
+  </joint>
+
+  <!-- Room 3: Walls (2m x 2m, centered at (0, 6)) -->
+  <link name="room3_north_wall">
+    <visual>
+      <geometry>
+        <box size="2.0 0.05 1.0"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="2.0 0.05 1.0"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="room3_north_wall_joint" type="fixed">
+    <parent link="house_base"/>
+    <child link="room3_north_wall"/>
+    <origin xyz="0 7 0.5" rpy="0 0 0"/>
+  </joint>
+  <link name="room3_south_wall_left">
+    <visual>
+      <geometry>
+        <box size="0.7 0.05 1.0"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.7 0.05 1.0"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="room3_south_wall_left_joint" type="fixed">
+    <parent link="house_base"/>
+    <child link="room3_south_wall_left"/>
+    <origin xyz="-0.65 5.3 0.5" rpy="0 0 0"/>
+  </joint>
+  <link name="room3_south_wall_right">
+    <visual>
+      <geometry>
+        <box size="0.7 0.05 1.0"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.7 0.05 1.0"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="room3_south_wall_right_joint" type="fixed">
+    <parent link="house_base"/>
+    <child link="room3_south_wall_right"/>
+    <origin xyz="0.65 5.3 0.5" rpy="0 0 0"/>
+  </joint>
+  <link name="room3_west_wall">
+    <visual>
+      <geometry>
+        <box size="2.0 0.05 1.0"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="2.0 0.05 1.0"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="room3_west_wall_joint" type="fixed">
+    <parent link="house_base"/>
+    <child link="room3_west_wall"/>
+    <origin xyz="-1 6 0.5" rpy="0 0 1.57"/>
+  </joint>
+  <link name="room3_east_wall">
+    <visual>
+      <geometry>
+        <box size="2.0 0.05 1.0"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="2.0 0.05 1.0"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="room3_east_wall_joint" type="fixed">
+    <parent link="house_base"/>
+    <child link="room3_east_wall"/>
+    <origin xyz="1 6 0.5" rpy="0 0 1.57"/>
+  </joint>
+</robot>
